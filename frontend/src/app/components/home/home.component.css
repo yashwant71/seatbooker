@@ -1,0 +1,106 @@
+
+
+.mainContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.leftCont{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.leftCont a{
+  margin-top: 10px;
+}
+.rightCont{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.rightTitle{
+  display: flex;
+  width: inherit;
+  justify-content: space-around;
+}
+
+.rightTitle span{
+  padding: 10px;
+  margin: 0px 5px;
+}
+
+.titlediv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seatsCont{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
+.seatRow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: inherit;
+}
+.seatRowReverse {
+  flex-direction: row-reverse; /* or any other style to reverse the order */
+}
+.seats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 0.4vw;
+  width: 4vw;
+  min-height: 30px;
+  min-width: 30px;
+  height: 4vw;
+  margin: 5px;
+}
+
+
+.inputCont{
+  display: flex;
+}
+
+.btn{
+  border: 1px solid gray;
+  padding: 6px;
+}
+
+.inputCont input{
+  padding: 5px;
+  margin-right: 10px;
+  width: 250px;
+}
+
+.btn:hover{
+  background-color: rgb(98, 245, 98);
+  cursor: pointer;
+}
+
+.booked{
+  background-color: lightgreen;
+}
+.notBooked{
+  background-color: lightgray;
+}
+
+.bookednow
+{
+  background-color: orange;
+}

@@ -1,0 +1,38 @@
+<div class="mainContainer">
+  <div class="leftCont">
+    <div class="inputCont" [formGroup]="bookingForm">
+      <input type="number" placeholder="type how many seats to book..." formControlName="seatCount">
+      <button class="booked btn" (click)="book()">Book</button>
+    </div>
+    <a href="#" (click)="reseed()">reset to default from database</a>
+  </div>
+  <div class="rightCont">
+    <div class="rightTitle">
+      <div class="titlediv">
+        <span class="booked"></span>
+        Already Booked
+      </div>
+      <div class="titlediv">
+        <span class="notBooked"></span>
+        Vacant seats
+      </div>
+      <div class="titlediv">
+        <span class="bookednow"></span>
+        Booked now
+      </div>
+      <div class="bookeddiv">
+
+      </div>
+    </div>
+    <div class="seatsCont">
+      <!-- looping through the seats and then create group of seven seats in a row and reversing alternate row so we can get snake like pattern for seats count -->
+      <ng-container *ngFor="let seat of seats; let i = index">
+        <div *ngIf="i % 7 === 0" [class]="i % 14 === 0 ? 'seatRow' : 'seatRowReverse seatRow'">
+          <div *ngFor="let seatInRow of seats.slice(i, i + 7)" class="seats" [ngClass]="{'booked': seatInRow.booked, 'notBooked': !seatInRow.booked, 'bookednow': seatInRow.bookednow}">
+            <div>{{seatInRow.seatNumber}}</div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
