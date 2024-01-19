@@ -4,11 +4,11 @@ import { SeatService } from 'src/app/services/seat.service';
 import { Seat } from 'src/app/shared/models/Seats';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-})
+  @Component({
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
+  })
 export class HomeComponent implements OnInit {
   seats: Seat[] = [];
   bookingForm: FormGroup;
@@ -39,6 +39,14 @@ export class HomeComponent implements OnInit {
         try{
           // Update corresponding seats in this.seats with the new information
           if(serverSeats.success){
+            // making existing "booked now" to "booked"
+            this.seats.forEach((currSeat) => {
+              if(currSeat.bookednow){
+                currSeat.booked = true;
+                delete currSeat.bookednow;
+              }
+            })
+            // adding bookednow to newly booked seats
             this.seats.forEach((localSeat) => {
               const matchingSeat = serverSeats.seats.find((serverSeat:Seat) => serverSeat.seatNumber === localSeat.seatNumber);
 
