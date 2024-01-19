@@ -5,7 +5,7 @@
         "node": ">=18 <19"
     },
     "scripts": {
-        "start": "cd backend && npm run build && node server.js",
+        "start": "cd backend && npm run built && node server.ts",
         "prebuild": "cd backend && npm run build",
         "build": "cd frontend && npm run build"
     }
