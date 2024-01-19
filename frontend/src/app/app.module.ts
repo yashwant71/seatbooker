@@ -7,6 +7,7 @@ import { HttpClientModule ,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { LoadingComponent } from './components/loading/loading.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoadingComponent } from './components/loading/loading.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi: true }
