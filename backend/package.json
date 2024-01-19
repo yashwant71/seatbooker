@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "start": "cd src && nodemon server.ts",
     "build": "npm install && tsc"
